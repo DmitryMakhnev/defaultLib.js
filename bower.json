@@ -1,5 +1,5 @@
 {
-  "name": "defaultLib",
+  "name": "defaultlib",
   "description": "Common JavaScript library for extend js and DOM API",
   "version": "0.0.1",
   "main": "./src/defaultLib.js",

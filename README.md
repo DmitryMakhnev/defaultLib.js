@@ -1,3 +1,3 @@
-#defaulLib
+#defaulLib.js
 
 docs coming soon
