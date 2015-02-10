@@ -1,0 +1,21 @@
+{
+  "name": "defaultLib",
+  "description": "Common JavaScript library for extend js and DOM API",
+  "version": "0.0.1",
+  "main": "./src/defaultLib.js",
+  "dist": "./dist/",
+  "license": "MIT",
+  "keywords": [
+    "defaultLib", "cycle"
+  ],
+  "authors": [
+    {
+      "name": "Dmitry Makhnev",
+      "email": "dmitry.ivshin@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DmitryMakhnev/defaultLib.js.git"
+  }
+}
