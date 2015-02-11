@@ -1,7 +1,7 @@
 {
   "name": "default-lib",
   "description": "Common JavaScript library for extend js and DOM API",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./src/default-lib.js",
   "dist": "./dist/",
   "license": "MIT",
