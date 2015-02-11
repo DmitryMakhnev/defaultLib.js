@@ -1,9 +1,9 @@
-var getGlobal = require('defaultLib').getGlobal;
-var cycleKeys = require('defaultLib').cycleKeys;
+var getGlobal = require('default-lib').getGlobal;
+var cycleKeys = require('default-lib').cycleKeys;
 var cycleStopKey = cycleKeys.stopKey;
 var cycleStopObject = cycleKeys.stopObject;
-var cycle = require('defaultLib').cycle;
-var reversiveCycle = require('defaultLib').reversiveCycle;
+var cycle = require('default-lib').cycle;
+var reversiveCycle = require('default-lib').reversiveCycle;
 
 describe('utils/cycles/*', function () {
 

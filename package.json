@@ -2,7 +2,7 @@
   "name": "defaultLib",
   "version": "0.0.1",
   "description": "Common JavaScript library for extend js and DOM API",
-  "main": "./src/defaultLib.js",
+  "main": "./src/default-lib.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -14,12 +14,11 @@ module.exports = function (config) {
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['jasmine'],
-        //frameworks: [],
 
 
         // list of files / patterns to load in the browser
         files: [
-            'tests/specs/defaultLib.js',
+            'tests/specs/default-lib.js',
             'tests/specs/utils/**/*.js'
         ],
 
@@ -31,8 +30,8 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'tests/specs/defaultLib.js': ['webpack'],
-            'tests/specs/utils/**/*.js': ['webpack']
+            'tests/specs/default-lib.js': ['webpack', 'sourcemap'],
+            'tests/specs/utils/**/*.js': ['webpack', 'sourcemap']
         },
 
         webpack: {

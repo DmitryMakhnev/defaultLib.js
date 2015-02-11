@@ -1,4 +1,4 @@
-var getObjectLength = require('defaultLib').getObjectLength;
+var getObjectLength = require('default-lib').getObjectLength;
 
 describe('utils/getObjectLength()', function () {
 

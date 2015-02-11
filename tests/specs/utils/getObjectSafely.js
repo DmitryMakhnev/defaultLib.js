@@ -1,4 +1,4 @@
-var getObjectSafely = require('defaultLib').getObjectSafely;
+var getObjectSafely = require('default-lib').getObjectSafely;
 
 describe('utils/getObjectSafely()', function () {
 

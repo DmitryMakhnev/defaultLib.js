@@ -1,4 +1,4 @@
-var typesDetection = require('defaultLib').typesDetection;
+var typesDetection = require('default-lib').typesDetection;
 
 describe('utils/typesDetection', function () {
     var object = {},

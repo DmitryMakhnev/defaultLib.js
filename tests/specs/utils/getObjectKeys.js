@@ -1,4 +1,4 @@
-var getObjectKeys = require('../../../src/defaultLib').getObjectKeys;
+var getObjectKeys = require('default-lib').getObjectKeys;
 
 describe('utils/getObjectKeys()', function () {
     it('is define', function () {
