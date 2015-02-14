@@ -9,5 +9,6 @@ defaultLib.cycle = require('./utils/cycle/cycle');
 defaultLib.reversiveCycle = require('./utils/cycle/reversiveCycle');
 defaultLib.getObjectSafely = require('./utils/getObjectSafely');
 defaultLib.onload = require('./utils/onload');
+defaultLib.customEvents = require('./modules/customEvents');
 
 module.exports = defaultLib;
