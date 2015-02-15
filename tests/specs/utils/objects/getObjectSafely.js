@@ -1,6 +1,6 @@
 var getObjectSafely = require('default-lib').getObjectSafely;
 
-describe('utils/getObjectSafely()', function () {
+describe('utils/objects/getObjectSafely()', function () {
 
     it('is define', function () {
         expect(getObjectSafely).toBeDefined();

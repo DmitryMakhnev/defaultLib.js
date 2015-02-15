@@ -1,6 +1,6 @@
 var getObjectKeys = require('default-lib').getObjectKeys;
 
-describe('utils/getObjectKeys()', function () {
+describe('utils/objects/getObjectKeys()', function () {
     it('is define', function () {
         expect(getObjectKeys).toBeDefined();
     });

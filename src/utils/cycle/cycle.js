@@ -1,7 +1,7 @@
 var getGlobal = require('../getGlobal');
 var cycleKeys = require('./cycleKeys');
 var typesDetection = require('../typesDetection');
-var getObjectKeys = require('../getObjectKeys');
+var getObjectKeys = require('../objects/getObjectKeys');
 
 
 /**

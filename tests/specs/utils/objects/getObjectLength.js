@@ -1,6 +1,6 @@
 var getObjectLength = require('default-lib').getObjectLength;
 
-describe('utils/getObjectLength()', function () {
+describe('utils/objects/getObjectLength()', function () {
 
     it('is define', function () {
         expect(getObjectLength).toBeDefined();

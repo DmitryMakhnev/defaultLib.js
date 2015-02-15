@@ -1,6 +1,6 @@
-var typesDetection = require('./typesDetection');
-var cycleKeys = require('./cycle/cycleKeys');
-var cycle = require('./cycle/cycle');
+var typesDetection = require('./../typesDetection');
+var cycleKeys = require('./../cycle/cycleKeys');
+var cycle = require('./../cycle/cycle');
 
 /**
  *
