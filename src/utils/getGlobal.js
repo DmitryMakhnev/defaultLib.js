@@ -1,4 +1,4 @@
-var _global = window || global;
+var _global = this.window || this.global;
 
 /**
  *

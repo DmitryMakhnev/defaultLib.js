@@ -1,15 +1,15 @@
-
-var typesDetection = {},
-    toString = Object.prototype.toString;
+var global = require('./getGlobal');
+var typesDetection = {};
+var toString = Object.prototype.toString;
 
 typesDetection.isArray = Array.isArray || function (verifiable) {
     return toString.call(verifiable) === '[object Array]';
 };
 
 typesDetection.isNodesCollection = function (verifiable) {
-    return document
-        && ((verifiable instanceof HTMLCollection)
-            || (verifiable instanceof NodeList));
+    return global.document
+        && ((verifiable instanceof global.HTMLCollection)
+            || (verifiable instanceof global.NodeList));
 };
 
 var types = ['Object', 'Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error', 'Boolean'],
