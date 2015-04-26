@@ -473,7 +473,7 @@ describe('utils/cycles/*', function () {
                 );
                 allArraysItemsIs('cycleable is correct', storages.cycleableStorage, object, 'input object');
                 allArraysItemsIs('data is correct', storages.dataStorage, undefined, 'undefined');
-                allArraysItemsIs('ctx is correct', storages.ctxStorage, global, 'global');
+                allArraysItemsIs('ctx is correct', storages.ctxStorage, getGlobal(), 'global');
 
             });
 

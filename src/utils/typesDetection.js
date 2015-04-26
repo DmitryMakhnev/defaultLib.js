@@ -1,4 +1,4 @@
-var global = require('./getGlobal');
+var _global = require('./getGlobal')();
 var typesDetection = {};
 var toString = Object.prototype.toString;
 
@@ -7,9 +7,9 @@ typesDetection.isArray = Array.isArray || function (verifiable) {
 };
 
 typesDetection.isNodesCollection = function (verifiable) {
-    return global.document
-        && ((verifiable instanceof global.HTMLCollection)
-            || (verifiable instanceof global.NodeList));
+    return _global.document
+        && ((verifiable instanceof _global.HTMLCollection)
+            || (verifiable instanceof _global.NodeList));
 };
 
 var types = ['Object', 'Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error', 'Boolean'],

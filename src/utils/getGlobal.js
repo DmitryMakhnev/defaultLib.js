@@ -1,4 +1,7 @@
-var _global = this.window || this.global;
+var _global = this.global
+    || (function () {
+        return window;
+    } ());
 
 /**
  *
