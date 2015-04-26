@@ -4,9 +4,6 @@ var path = require('path');
 
 var wallabyPostprocessor = wallabyWebpack({
     plugins: [
-        new webpack.DefinePlugin({
-            _PRODUCTION_: false
-        }),
         new webpack.ResolverPlugin(
             new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
         )
@@ -35,8 +32,6 @@ module.exports = function (wallaby) {
         ],
 
         postprocessor: wallabyPostprocessor,
-
-        debug: true,
 
         bootstrap: function () {
             window.__moduleBundler.loadTests();
