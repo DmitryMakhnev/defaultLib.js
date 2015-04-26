@@ -22,7 +22,6 @@ module.exports = function(cycleable, fn, fnData, ctx, step, start){
         keys,
         result;
     if (cycleable){
-        //TODO: [dmitry.makhnev]
         ctx = ctx || getGlobal();
         step = step || 1;
         i = start || 0;
