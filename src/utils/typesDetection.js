@@ -7,7 +7,7 @@ typesDetection.isArray = Array.isArray || function (verifiable) {
 };
 
 typesDetection.isNodesCollection = function (verifiable) {
-    return _global.document
+    return ('document' in _global)
         && ((verifiable instanceof _global.HTMLCollection)
             || (verifiable instanceof _global.NodeList));
 };

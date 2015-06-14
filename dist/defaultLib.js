@@ -55,41 +55,39 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	var defaultLib = {};
-
+	
 	defaultLib.getGlobal = __webpack_require__(1);
 	defaultLib.typesDetection = __webpack_require__(2);
-
+	
 	defaultLib.getObjectKeys = __webpack_require__(3);
 	defaultLib.getObjectLength = __webpack_require__(4);
 	defaultLib.getObjectSafely = __webpack_require__(5);
 	defaultLib.getObjectFiled = __webpack_require__(6);
-
+	
 	defaultLib.cycleKeys = __webpack_require__(7);
 	defaultLib.cycle = __webpack_require__(8);
 	defaultLib.reversiveCycle = __webpack_require__(9);
-
+	
 	defaultLib.customEvents = __webpack_require__(10);
-
+	
 	defaultLib.onload = __webpack_require__(11);
-
+	
 	module.exports = defaultLib;
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _global = this.global
-	    || (function () {
-	        return window;
-	    } ());
-
+	/* WEBPACK VAR INJECTION */(function(global) {var _global = this.window || global;
+	
 	/**
 	 *
-	 * @return {Window|Object}
+	 * @return {Object}
 	 */
 	module.exports = function () {
 	    return _global;
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 2 */
@@ -98,36 +96,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _global = __webpack_require__(1)();
 	var typesDetection = {};
 	var toString = Object.prototype.toString;
-
+	
 	typesDetection.isArray = Array.isArray || function (verifiable) {
 	    return toString.call(verifiable) === '[object Array]';
 	};
-
+	
 	typesDetection.isNodesCollection = function (verifiable) {
-	    return _global.document
+	    return ('document' in _global)
 	        && ((verifiable instanceof _global.HTMLCollection)
 	            || (verifiable instanceof _global.NodeList));
 	};
-
+	
 	var types = ['Object', 'Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error', 'Boolean'],
 	    i = types.length;
-
+	
 	function createTypeDetector (typeName) {
 	    return function (verifiable) {
 	        return toString.call(verifiable) === '[object ' + typeName + ']';
 	    }
 	}
-
+	
 	for (; i-- ;){
 	    typesDetection['is' + types[i]] = createTypeDetector(types[i]);
 	}
-
+	
 	typesDetection.isCollection = function (verifiable) {
 	    return typesDetection.isArray(verifiable)
 	        || typesDetection.isNodesCollection(verifiable)
 	        || typesDetection.isArguments(verifiable);
 	};
-
+	
 	module.exports = typesDetection;
 
 /***/ },
@@ -153,17 +151,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	    getObjectKeys = function (object) {
 	        var p,
 	            keys = [];
-
+	
 	        for (p in object) {
 	            if (object.hasOwnProperty(p)) {
 	                keys.push(p);
 	            }
 	        }
-
+	
 	        return keys;
 	    };
 	}
-
+	
 	module.exports = getObjectKeys;
 
 /***/ },
@@ -171,7 +169,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports, __webpack_require__) {
 
 	var getObjectKeys = __webpack_require__(3);
-
+	
 	/**
 	 *
 	 * @param {Object} object
@@ -188,7 +186,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var typesDetection = __webpack_require__(2);
 	var cycleKeys = __webpack_require__(7);
 	var cycle = __webpack_require__(8);
-
+	
 	/**
 	 *
 	 * @param {Object} object
@@ -205,7 +203,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        object = object[property];
 	    }, null, null, 1, 1);
-
+	
 	    return object;
 	};
 
@@ -227,7 +225,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var cache;
 	    var result;
 	    var undefined;
-
+	
 	    if (object){
 	        if ((keyTypeof !== 'string')
 	            && (keyTypeof !== 'number')){
@@ -263,11 +261,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.result = null;
 	}
 	CycleStopObject.prototype = new CycleStopKey();
-
+	
 	module.exports = {
 	    StopKey: CycleStopKey,
 	    stopKey: new CycleStopKey(),
-
+	
 	    StopObject: CycleStopObject,
 	    stopObject: new CycleStopObject()
 	};
@@ -280,8 +278,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var cycleKeys = __webpack_require__(7);
 	var typesDetection = __webpack_require__(2);
 	var getObjectKeys = __webpack_require__(3);
-
-
+	
+	
 	/**
 	 *
 	 * @param {Array|Object|String} cycleable
@@ -300,7 +298,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        keys,
 	        result;
 	    if (cycleable){
-	        //TODO: [dmitry.makhnev]
 	        ctx = ctx || getGlobal();
 	        step = step || 1;
 	        i = start || 0;
@@ -348,7 +345,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    return cycleable;
 	};
-
+	
 
 
 /***/ },
@@ -359,7 +356,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var cycleKeys = __webpack_require__(7);
 	var typesDetection = __webpack_require__(2);
 	var getObjectKeys = __webpack_require__(3);
-
+	
 	/**
 	 *
 	 * @param {Array|Object|String} cycleable
@@ -421,7 +418,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var cycle = __webpack_require__(8);
 	var targets = [];
 	var targetsEvents = [];
-
+	
 	/**
 	 *
 	 * @param {Object} eventData
@@ -432,7 +429,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	function addEvent (eventData, handler, ctx, data) {
 	    eventData.handlersData.push(handler, ctx, data);
 	}
-
+	
 	/**
 	 *
 	 * @param {Object} eventData
@@ -459,7 +456,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        removeEvent(targetIndex, eventName);
 	    }
 	}
-
+	
 	/**
 	 *
 	 * @param {Number} targetIndex
@@ -475,7 +472,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	    }
 	}
-
+	
 	/**
 	 *
 	 * @param {Number} targetIndex
@@ -484,7 +481,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    targets.splice(targetIndex, 1);
 	    targetsEvents.splice(targetIndex, 1);
 	}
-
+	
 	/**
 	 *
 	 * @param {Function} handler
@@ -500,7 +497,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return cycleKeys.stopKey;
 	    }
 	}
-
+	
 	//this === target
 	/**
 	 *
@@ -524,7 +521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        handler.call(ctx, data);
 	    }
 	}
-
+	
 	/**
 	 *
 	 * @param {Function} handler
@@ -540,7 +537,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        turn[index + 2]
 	    );
 	}
-
+	
 	/**
 	 *
 	 * @param {Function} handler
@@ -557,7 +554,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        turnForRemovingData.eventName
 	    );
 	}
-
+	
 	module.exports = {
 	    /**
 	     *
@@ -572,11 +569,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var index = targets.indexOf(target),
 	            targetEvents,
 	            eventData;
-
+	
 	        if (index === -1) {
 	            index = targets.push(target);
 	            index -= 1;
-
+	
 	            targetEvents = {
 	                //events size cache: performance optimisation for check remove targetEvents and target
 	                _quantity: 0
@@ -585,9 +582,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        } else {
 	            targetEvents = targetsEvents[index];
 	        }
-
+	
 	        eventData = targetEvents[eventName];
-
+	
 	        if (eventData) {
 	            if (eventData.isDispatching) {
 	                eventData.turnForAdding.push(handler, ctx, data);
@@ -603,11 +600,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	            };
 	            targetEvents._quantity += 1
 	        }
-
+	
 	        return target;
-
+	
 	    },
-
+	
 	    /**
 	     *
 	     * @param {*} target
@@ -619,7 +616,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    remove: function (target, eventName, handler, ctx) {
 	        var index = targets.indexOf(target),
 	            eventData;
-
+	
 	        if (index !== -1){
 	            eventData = targetsEvents[index][eventName];
 	            if (eventData.isDispatching) {
@@ -628,10 +625,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                removeHandlerEvent(eventData, handler, ctx, index, eventName);
 	            }
 	        }
-
+	
 	        return target;
 	    },
-
+	
 	    /**
 	     *
 	     * @param {*} target
@@ -643,7 +640,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var index = targets.indexOf(target),
 	            eventData,
 	            parameters;
-
+	
 	        if (index !== -1) {
 	            eventData = targetsEvents[index][eventName];
 	            if (eventData && !eventData.isDispatching) {
@@ -651,9 +648,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	                if (arguments.length !== 2) {
 	                    parameters = Array.prototype.slice.call(arguments, 2);
 	                }
-
+	
 	                eventData.isDispatching = true;
-
+	
 	                cycle(
 	                    eventData.handlersData,
 	                    handlersDispatchProcessingIteration,
@@ -661,9 +658,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    target,
 	                    3
 	                );
-
+	
 	                eventData.isDispatching = false;
-
+	
 	                if (eventData.turnForAdding.length !== 0) {
 	                    cycle(
 	                        eventData.turnForAdding,
@@ -674,7 +671,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                    );
 	                    eventData.turnForAdding.length = 0;
 	                }
-
+	
 	                if (eventData.turnForRemoving.length !== 0) {
 	                    cycle(
 	                        eventData.turnForRemoving,
@@ -691,10 +688,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	            }
 	        }
-
+	
 	        return target;
 	    },
-
+	
 	    /**
 	     *
 	     * @param {*} target
@@ -713,7 +710,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return target;
 	    }
 	};
-
+	
 	//data structure
 	//list target objects
 	//[HTMLElement, ...]

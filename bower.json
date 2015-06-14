@@ -2,7 +2,7 @@
   "name": "default-lib",
   "umdName": "defaultLib",
   "description": "Common JavaScript library for extend js and DOM API",
-  "version": "0.0.4",
+  "version": "0.2.0",
   "main": "./src/default-lib.js",
   "dist": "./dist/",
   "license": "MIT",

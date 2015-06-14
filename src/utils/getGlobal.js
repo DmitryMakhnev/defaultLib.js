@@ -1,11 +1,8 @@
-var _global = this.global
-    || (function () {
-        return window;
-    } ());
+var _global = this.window || global;
 
 /**
  *
- * @return {Window|Object}
+ * @return {Object}
  */
 module.exports = function () {
     return _global;
