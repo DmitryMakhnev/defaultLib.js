@@ -1,6 +1,6 @@
 {
   "name": "defaultLib",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Common JavaScript library for extend js and DOM API",
   "main": "./src/default-lib.js",
   "scripts": {
